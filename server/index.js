@@ -1,27 +1,38 @@
 //package imports
-import express from "express";
-import dotenv from "dotenv";
+const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const colors = require("colors");
+
 // files imports
-import connectDB from "./config/db.js";
+const { connectDB } = require("./src/config/databaseConfig.js");
+const { PORT } = require("./src/config/serverConfig.js");
+const ApiRoutes = require('./src/routes/index.js')
 
-//Dot ENV config
-dotenv.config();
+//* Defination of legend function
+const setUpAndStartServer = async () => {
 
-// mongodb connection
-connectDB();
+    try {
+        //! connect to database
+        await connectDB();
 
-//rest object
-const app = express();
+        const app = express();
 
-//routes
-app.get("/", (req, res) => {
-    res.send("<h1>Welcome to the server</h1>")
-})
+        app.use(bodyParser.json());
+        app.use(bodyParser.urlencoded({ extended: true }));
 
-//port
-const PORT = process.env.PORT || 8080
+        app.use(cors());
 
-//listen
-app.listen(PORT, () => {
-    console.log(`Node Server is Running in ${process.env.DEV_MODE} on PORT ` + PORT)
-})
+        app.use('/api', ApiRoutes);
+
+        app.listen(PORT, () => {
+            console.log(`Node Server is Running in ${process.env.DEV_MODE} on PORT ${PORT}`.brightCyan.bgGray);
+        });
+    } catch (error) {
+        console.log("Error, connecting to database..." + error);
+        throw error;
+    }
+}
+
+//* Calling the legend function of the file...
+setUpAndStartServer();
