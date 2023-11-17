@@ -1,8 +1,13 @@
 import React from 'react'
+// import { AppBar, Toolbar, Typography } from '@mui/material';
+
+
 
 const App = () => {
   return (
-    <div className='text-6xl font-bold flex items-center justify-center'>Client Side</div>
+    <>
+     App
+    </>
   )
 }
 
