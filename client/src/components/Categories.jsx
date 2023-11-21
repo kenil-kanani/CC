@@ -51,7 +51,7 @@ const Categories = () => {
                     <FaArrowRight className='mt-1' />
                 </div>
             </div>
-                <div className="categoryList px-3 pl-3 md:px-20 md:pt-8 flex flex-wrap gap-3 gap-y-7 mt-6 mb-5">
+                <div className="categoryList md:px-20 md:pt-8 flex flex-wrap justify-center gap-3 gap-y-7 mt-6 mb-5">
                     {categories.map((category, index) => (
                         <CategoryCard
                             key={index}
