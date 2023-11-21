@@ -47,7 +47,7 @@ const DrawerComp = () => {
               </ListItemButton>
             ))}
           </List>
-          <Box flexDirection="row" width="100%" padding="10px 80px" margin="10px 0">
+          <Box flexDirection="row" margin="10px 0" padding="10px 0" sx={{display:"flex", justifyContent:"center"}}>
             <Button sx={{ marginRight:"20px", fontSize:"18px", padding:"5px 25px", color: "primary", borderColor: "primary" }} variant="outlined">
               Login
             </Button>

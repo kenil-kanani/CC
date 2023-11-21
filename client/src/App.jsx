@@ -2,6 +2,11 @@ import React from 'react'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Navbar from './components/Navbar'
 import Home from './components/Home';
+import Categories from './components/Categories';
+import NewsLetter from './components/NewsLetter';
+import JobBox from './components/JobBox';
+import Testimonial from './components/Testimonial/Testimonial';
+import Footer from './components/Footer';
 
 const theme = createTheme({
   palette: {
@@ -26,6 +31,11 @@ const App = () => {
       <ThemeProvider theme={theme}>
           <Navbar />
           <Home />
+          <Categories/>
+          <NewsLetter/>
+          <JobBox/>
+          <Testimonial/>
+          <Footer/>
       </ThemeProvider>
     </>
   )

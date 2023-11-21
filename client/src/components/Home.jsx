@@ -5,15 +5,16 @@ import ExploreJobs from './ExploreJobs'
 
 const Home = () => {
     return (
-        <div>
+        <div className='pb-12 w-full'>
             <Header />
             <div className='px-20'>
                 <div className='md:hidden'>
                     <ExploreJobs />
                 </div>
-                {/* <div className='hidden md:flex'>
-                    <SearchBar />
-                </div> */}
+                <div className='hidden md:flex'>
+                    {/* <SearchBar /> */}
+                    SearchBar will come here
+                </div>
             </div>
         </div>
     )
