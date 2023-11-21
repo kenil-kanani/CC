@@ -58,10 +58,10 @@ const DrawerComp = () => {
         </Box>
       </Drawer>
       <IconButton
-        sx={{ color: "white", marginLeft: "auto" }}
+        sx={{ color: "white", marginLeft: "auto", paddingRight: "15px"}}
         onClick={() => setOpenDrawer(!openDrawer)}
       >
-        <MenuIcon color="white" />
+        <MenuIcon color="white" sx={{fontSize: "30px"}} />
       </IconButton>
     </>
   );

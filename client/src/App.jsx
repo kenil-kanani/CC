@@ -1,7 +1,7 @@
 import React from 'react'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Navbar from './components/Navbar'
-import Home from './components/Home'
+import Home from './components/Home';
 
 const theme = createTheme({
   palette: {
@@ -24,8 +24,8 @@ const App = () => {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <Navbar />
-        <Home/>
+          <Navbar />
+          <Home />
       </ThemeProvider>
     </>
   )
